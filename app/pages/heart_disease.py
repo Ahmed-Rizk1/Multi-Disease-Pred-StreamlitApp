@@ -66,9 +66,13 @@ def render_heart_disease_page():
             prediction = heart_model.predict([user_input])
 
             if prediction[0] == 1:
-                diagnosis = "The person is having heart disease"
+                diagnosis = (
+                    "The person is having heart disease , You should consult a doctor"
+                )
             else:
-                diagnosis = "The person does not have any heart disease"
+                diagnosis = (
+                    "The person does not have any heart disease, You can be healthy"
+                )
         except ValueError:
             diagnosis = "Please enter valid numeric values for all fields"
 
